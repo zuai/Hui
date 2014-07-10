@@ -459,16 +459,16 @@ public class LinkedTransferQueueFix<E> extends AbstractQueue<E>
         final boolean cannotPrecede(Node node, boolean haveData) {
         	boolean d = isData;
         	if(d != haveData){
-        		Object x = item;
-        		if(x != this && (x!=null) == d && x!= Node.CANCEL)
-        			return true;
-        		if(item == CANCEL){
+        		Object x;
+        		if((x = item) == CANCEL){
         			if(node.next != this){
         				node.next = this;
         				return true;
         			}
         			this.forgetContents();
         		}
+        		else if(x != this && (x!=null) == d)
+        			return true;
         	}
         	node.next = null;
         	return false;

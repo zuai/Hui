@@ -344,7 +344,6 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E>
                                (newNode = t.next) != null && // advance and retry
                                (newNode = newNode.next) != null && newNode != t);
                     }
-                    
                     return true;
                 }
                 // Lost CAS race to another thread; re-read next
@@ -380,15 +379,11 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E>
                             h.lazySetNext(h);
                             break;
                         }                 // advance and retry
-                        
                         if ((h = head) == null ||
                             ((r = h.next) ==null || r.item != null)) 
                             break;        // unless slack < 2
                     }
-                    
                     return item;
-                    
-                    
                 }
                 else if ((q = p.next) == null) {
                     updateHead(h, p);

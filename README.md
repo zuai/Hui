@@ -12,3 +12,5 @@ TestForStampedLock.java：用于测试StampedLock:当第一个读锁进入等待
 ConcurrentLinkedQueue.java：对JUC中的这个类在poll和offer上进行了一点修改（注释中保留原代码），采用了和LinkedTransferQueue一样的思想。
 
 UnsafeSupport.java：提供可用的Unsafe。
+
+TestForMultiverse.java：一个运行Multiverse的用例。

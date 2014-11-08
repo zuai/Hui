@@ -13,4 +13,4 @@ ConcurrentLinkedQueue.java：对JUC中的这个类在poll和offer上进行了一
 
 UnsafeSupport.java：提供可用的Unsafe。
 
-TestForMultiverse.java：一个运行Multiverse的用例。
+TestForMultiverse.java：一个运行Multiverse(软件事务内存)的用例。
